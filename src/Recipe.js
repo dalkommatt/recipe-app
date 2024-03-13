@@ -1,23 +1,13 @@
 export default function Recipe({ recipe, deleteRecipe }) {
   return (
     <tr>
+      <td>{recipe.name}</td>
+      <td>{recipe.cuisine}</td>
       <td>
-        <img src={recipe.photo} alt={recipe.name} />
+        <img src={recipe.photo} alt={recipe.name} className="recipe-image" />
       </td>
-      <td>
-        <div>
-          <h2>{recipe.name}</h2>
-          <p>{recipe.cuisine}</p>
-          <h3>Ingredients</h3>
-          <ul>
-            {recipe.ingredients}
-          </ul>
-          <h3>Preparation</h3>
-          <ol>
-            {recipe.preparation}
-          </ol>
-        </div>
-      </td>
+      <td>{recipe.ingredients}</td>
+      <td>{recipe.preparation}</td>
       <td>
         <button name="delete" onClick={() => deleteRecipe(recipe.name)}>
           Delete

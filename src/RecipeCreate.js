@@ -9,6 +9,10 @@ function RecipeCreate({ setRecipes }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // If any fields are empty then return
+    if (!name || !cuisine || !photo || !ingredients || !preparation) {
+      return;
+    }
     const newRecipe = {
       name,
       cuisine,
